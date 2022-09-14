@@ -59,11 +59,11 @@ The project is divided into the corresponding packages:
   4.3 **BuildingPreparingRandomTool** - class that randomly creates building with entry parameters.
   4.4 **RandomisingTool** - class with different generating random values methods
   4.5 **ValidationTool** - utility class with different static validating methods
-5. **view** - contains views:
-  5.1 **View<T>** - parameterised abstract class, that holds ViewModel and provides general method signatures for implemeting.
-  5.2 **ConsoleView** - class that extends View<ElevatorBuildingViewModel> and provides all required methods to show app data in the console.
+5. `view` - contains views:
+  5.1 `View<T>` - parameterised abstract class, that holds ViewModel and provides general method signatures for implemeting.
+  5.2 `ConsoleView` - class that extends View<ElevatorBuildingViewModel> and provides all required methods to show app data in the console.
 6. `view_model` - contains view models:
-  6.1. `ElevatorBuildingViewModel` - contains Elevator, Building and Elevator simulation current step.
+  6.1 `ElevatorBuildingViewModel` - contains Elevator, Building and Elevator simulation current step.
 
 # Project structure:
 
