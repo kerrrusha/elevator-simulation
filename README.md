@@ -36,7 +36,7 @@ It is assumed that the config.json file is located in a relative path:
 /src/main/resources/config.json
 ```
 
-#Solution class diagram:
+# Solution class diagram:
 
 ![](https://reedfree.sirv.com/dataox_test_task.png)
 
@@ -123,3 +123,15 @@ It is assumed that the config.json file is located in a relative path:
 # Project structure:
 
 ![](https://reedfree.sirv.com/projstruct.png)
+
+# Algorithm:
+
+For the first time, the elevator is loaded with people from the first floor, and goes to the largest of those that passengers need.
+
+On the way, the elevator stops at those floors where passengers need, dropping them off and picking up people who need to go in the same direction as the elevator is moving.
+
+When boarding new passengers, the target floor is recalculated.
+
+In the case when the elevator is empty, and there are still people waiting, the elevator will first go to the top floor, picking up the rest along the way.
+
+While the elevator is empty, it will pick up people waiting for it along the way.
