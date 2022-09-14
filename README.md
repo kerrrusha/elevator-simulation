@@ -64,6 +64,28 @@ The project is divided into the corresponding packages:
   5.2 `ConsoleView` - class that extends View<ElevatorBuildingViewModel> and provides all required methods to show app data in the console.
 6. `view_model` - contains view models:
   6.1 `ElevatorBuildingViewModel` - contains Elevator, Building and Elevator simulation current step.
+    
+<ol>
+  <li>
+    <p>A numbered list</p>
+  </li>
+  <li>
+    <p>With sublist.</p>
+    <ul>
+      <li>
+        <p><strong>Some bold entry:</strong></p>
+
+        <p>which correctly appears in the list</p>
+      </li>
+      <li>
+        <p><strong>Another bold entry in the list:</strong></p>
+
+        <p>Which doesn’t appear in the list</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
 
 # Project structure:
 
