@@ -1,4 +1,4 @@
-package com.github.kerrrusha.dataox_test_task;
+package com.github.kerrrusha.dataox_test_task.tool;
 
 import com.github.kerrrusha.dataox_test_task.exception.IllegalFloorException;
 

@@ -1,6 +1,7 @@
 package com.github.kerrrusha.dataox_test_task;
 
 import com.github.kerrrusha.dataox_test_task.model.Building;
+import com.github.kerrrusha.dataox_test_task.tool.BuildingPreparingTool;
 
 import java.util.Objects;
 

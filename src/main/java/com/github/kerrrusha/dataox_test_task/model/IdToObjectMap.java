@@ -1,5 +1,7 @@
 package com.github.kerrrusha.dataox_test_task.model;
 
+import com.github.kerrrusha.dataox_test_task.exception.ElementAlreadyExistsException;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,20 +15,28 @@ public class IdToObjectMap implements Emptyable {
     public IdToObjectMap(IdToObjectMap other) {
         this.data = other.data;
     }
-    public void add(Identificable toAdd) {
-        data.put(toAdd.getId(), toAdd);
+    public void add(Identificable element) {
+        data.put(element.getId(), element);
     }
-    public boolean contains(Human human) {
-        return data.containsKey(human.getId());
+    public Identificable get(Integer id) {
+        return data.get(id);
+    }
+    public boolean contains(Identificable element) {
+        return data.containsKey(element.getId());
     }
     public int size() {
         return data.size();
     }
-    public void remove(Human humanToRemove) {
-        data.remove(humanToRemove.getId());
+    public void remove(Identificable element) {
+        data.remove(element.getId());
     }
     public Collection<Identificable> toCollection() {
         return data.values();
+    }
+    public void checkIfPresent(Identificable element) {
+        if (contains(element)) {
+            throw new ElementAlreadyExistsException();
+        }
     }
 
     @Override

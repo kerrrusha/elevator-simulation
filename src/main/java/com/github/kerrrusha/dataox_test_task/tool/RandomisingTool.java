@@ -1,8 +1,8 @@
-package com.github.kerrrusha.dataox_test_task;
+package com.github.kerrrusha.dataox_test_task.tool;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Randomizer {
+public class RandomisingTool {
     public int nextInt(int from, int to) {
         return ThreadLocalRandom.current().nextInt(from, to);
     }

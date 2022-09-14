@@ -2,7 +2,7 @@ package com.github.kerrrusha.dataox_test_task.model;
 
 import com.github.kerrrusha.dataox_test_task.exception.IllegalFloorException;
 
-public class Human extends IdToObjectMap implements Identifier {
+public class Human extends Identifier {
     private static int objectsCreated = 0;
 
     private int destinationFloor;

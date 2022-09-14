@@ -1,13 +1,11 @@
 package com.github.kerrrusha.dataox_test_task.model;
 
-import com.github.kerrrusha.dataox_test_task.ValidationTool;
-import com.github.kerrrusha.dataox_test_task.exception.HumanAlreadyExistsException;
-import com.github.kerrrusha.dataox_test_task.exception.HumanNotFoundException;
+import com.github.kerrrusha.dataox_test_task.tool.ValidationTool;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Floor extends IdToObjectMap implements Identifier {
+public class Floor extends Identifier {
     private static int objectsCreated = 0;
 
     private final IdToObjectMap people;
@@ -32,16 +30,14 @@ public class Floor extends IdToObjectMap implements Identifier {
         return people.size();
     }
     public void add(Human humanToAdd) {
-        if (contains(humanToAdd))
-            throw new HumanAlreadyExistsException();
+        people.checkIfPresent(humanToAdd);
         people.add(humanToAdd);
     }
     public boolean contains(Human human) {
         return people.contains(human);
     }
     public void remove(Human humanToRemove) {
-        if (people.isEmpty() || contains(humanToRemove))
-            throw new HumanNotFoundException();
+        people.checkIfPresent(humanToRemove);
         people.remove(humanToRemove);
     }
     public List<Human> getPeopleList() {

@@ -1,8 +1,8 @@
 package com.github.kerrrusha.dataox_test_task.exception;
 
-public class HumanNotFoundException extends IllegalArgumentException {
+public class ElementNotFoundException extends IllegalArgumentException {
     private static final String ERROR_MESSAGE = "Such human already exists.";
-    public HumanNotFoundException() {
+    public ElementNotFoundException() {
         super(ERROR_MESSAGE);
     }
 }
