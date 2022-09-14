@@ -62,8 +62,8 @@ The project is divided into the corresponding packages:
 5. **view** - contains views:
   5.1 **View<T>** - parameterised abstract class, that holds ViewModel and provides general method signatures for implemeting.
   5.2 **ConsoleView** - class that extends View<ElevatorBuildingViewModel> and provides all required methods to show app data in the console.
-6. #####view_model##### - contains view models:
-  6.1. ######ElevatorBuildingViewModel###### - contains Elevator, Building and Elevator simulation current step.
+6. #####view_model - contains view models:
+  6.1. ######ElevatorBuildingViewModel - contains Elevator, Building and Elevator simulation current step.
 
 # Project structure:
 
