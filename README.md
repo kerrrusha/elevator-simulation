@@ -67,10 +67,16 @@ The project is divided into the corresponding packages:
     
 <ol>
   <li>
-    <p>With sublist.</p>
+    <p><strong>controller</strong> - contains ElevatorController class, used to combine ConsoleView and simulating of Elevator work</p>
+  </li>
+  <li>
+    <p><strong>exception</strong> - containt custom exceptions, written in order to make debug process easier</p>
+  </li>
+  <li>
+    <p><strong>model</strong> - contains main model classes, such as:</p>
     <ol>
       <li>
-        <strong>Some bold entry:</strong>
+        <strong>Building</strong> - class-container that describes building with floors. Doesn't have to extend Identifier class because there is no need to create Building collections and maps 
       </li>
     </ol>
   </li>
