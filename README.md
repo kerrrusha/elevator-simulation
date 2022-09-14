@@ -40,30 +40,7 @@ It is assumed that the config.json file is located in a relative path:
 
 ![](https://reedfree.sirv.com/dataox_test_task.png)
 
-The project is divided into the corresponding packages:
-
-1. **controller** - contains ElevatorController class, used to combine ConsoleView and simulating of Elevator work
-2. **exception** - containt custom exceptions, written in order to make debug process easier
-3. **model** - contains main model classes, such as: 
-  3.1 **Building** - class-container that describes building with floors. Doesn't have to extend Identifier class because there is no need to create Building collections and maps 
-  3.2 **Direction** - enum class, describes possible elevator directions
-  3.3 **Elevator** - class-container, that describes elevator with people on some floor.
-  3.4 **Floor** - class-container of Human. Extends Identifier class, because this class objects are used to create Collections in Building class
-  3.5 **Human** - this class describes human, that wants to lift up to some floor via elevator. Extends Identifier class, because Human objects are collected in Floor and Elevator classes.
-  3.6 **Identificable** - interface with getId() method.
-  3.7 **Identifier** - class, that implements identificable interface. Used to abstract while collecting such objects.
-  3.8 **IdToObjectMap** - superstructure on HashMap<Integer, Identificable>, that holds Identificable objects by their id values, so we can quickly get them out.
-4. **tool** - contains different tools, such as:
-  4.1 **BuildingPreparable** - interface, used to create custom BuildingPreparators.
-  4.2 **BuildingPreparingParameterizedTool** - class that creates strongly parameterized building.
-  4.3 **BuildingPreparingRandomTool** - class that randomly creates building with entry parameters.
-  4.4 **RandomisingTool** - class with different generating random values methods
-  4.5 **ValidationTool** - utility class with different static validating methods
-5. `view` - contains views:
-  5.1 `View<T>` - parameterised abstract class, that holds ViewModel and provides general method signatures for implemeting.
-  5.2 `ConsoleView` - class that extends View<ElevatorBuildingViewModel> and provides all required methods to show app data in the console.
-6. `view_model` - contains view models:
-  6.1 `ElevatorBuildingViewModel` - contains Elevator, Building and Elevator simulation current step.
+###The project is divided into the corresponding packages:
     
 <ol>
   <li>
@@ -79,64 +56,64 @@ The project is divided into the corresponding packages:
         <strong>Building</strong> - class-container that describes building with floors. Doesn't have to extend Identifier class because there is no need to create Building collections and maps 
       </li>
         <li>
-        <p><strong>Direction</strong></p>
+        <p><strong>Direction</strong> - enum class, describes possible elevator directions</p>
       </li>
         <li>
-        <p><strong>Elevator</strong></p>
+        <p><strong>Elevator</strong> - class-container, that describes elevator with people on some floor.</p>
       </li>
         <li>
-        <p><strong>Floor</strong></p>
+        <p><strong>Floor</strong> - class-container of Human. Extends Identifier class, because this class objects are used to create Collections in Building class</p>
       </li>
         <li>
-        <p><strong>Human</strong></p>
+        <p><strong>Human</strong> - this class describes human, that wants to lift up to some floor via elevator. Extends Identifier class, because Human objects are collected in Floor and Elevator classes.</p>
       </li>
         <li>
-        <p><strong>Identificable</strong></p>
+        <p><strong>Identificable</strong> - interface with getId() method.</p>
       </li>
         <li>
-        <p><strong>Identifier</strong></p>
+        <p><strong>Identifier</strong> - class, that implements identificable interface. Used to abstract while collecting such objects.</p>
       </li>
         <li>
-        <p><strong>IdToObjectMap</strong></p>
+        <p><strong>IdToObjectMap</strong> - superstructure on HashMap<Integer, Identificable>, that holds Identificable objects by their id values, so we can quickly get them out.</p>
       </li>
     </ol>
   </li>
     <li>
-    <p><strong>tool</strong></p>
+    <p><strong>tool</strong> - contains different tools, such as:</p>
         <ol>
             <li>
-        <p><strong>BuildingPreparable</strong></p>
+        <p><strong>BuildingPreparable</strong> - interface, used to create custom BuildingPreparators.</p>
       </li>
         <li>
-        <p><strong>BuildingPreparingParameterizedTool</strong></p>
+        <p><strong>BuildingPreparingParameterizedTool</strong> - class that creates strongly parameterized building.</p>
       </li>
         <li>
-        <p><strong>BuildingPreparingRandomTool</strong></p>
+        <p><strong>BuildingPreparingRandomTool</strong> - class that randomly creates building with entry parameters.</p>
       </li>
             <li>
-        <p><strong>RandomisingTool</strong></p>
+        <p><strong>RandomisingTool</strong>- class with different generating random values methods.</p>
       </li>
             <li>
-        <p><strong>ValidationTool</strong></p>
+        <p><strong>ValidationTool</strong> - utility class with different static validating methods.</p>
       </li>
     </ol>
   </li>
     <li>
-    <p><strong>view</strong></p>
+    <p><strong>view</strong> - contains views:</p>
         <ol>
             <li>
-        <p><strong>BuildingPreparable</strong></p>
+        <p><strong>View<T></strong> - parameterised abstract class, that holds ViewModel and provides general method signatures for implemeting.</p>
       </li>
         <li>
-        <p><strong>BuildingPreparingParameterizedTool</strong></p>
+        <p><strong>ConsoleView</strong> - class that extends View<ElevatorBuildingViewModel> and provides all required methods to show app data in the console.</p>
       </li>
     </ol>
   </li>
     <li>
-    <p><strong>view_model</strong></p>
+    <p><strong>view_model</strong> - contains view models:</p>
         <ol>
             <li>
-        <p><strong>ElevatorBuildingViewModel</strong></p>
+        <p><strong>ElevatorBuildingViewModel</strong> - contains Elevator, Building and Elevator simulation current step.</p>
       </li>
     </ol>
   </li>
