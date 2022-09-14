@@ -1,6 +1,5 @@
 package com.github.kerrrusha.dataox_test_task.model;
 
-import com.github.kerrrusha.dataox_test_task.tool.ValidationTool;
 import com.github.kerrrusha.dataox_test_task.exception.IllegalFloorException;
 
 import java.util.Collection;

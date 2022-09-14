@@ -5,6 +5,8 @@ import com.github.kerrrusha.dataox_test_task.model.Elevator;
 import com.github.kerrrusha.dataox_test_task.model.Human;
 import com.github.kerrrusha.dataox_test_task.view_model.ElevatorBuildingViewModel;
 
+import java.util.Optional;
+
 public class ConsoleView implements View<ElevatorBuildingViewModel> {
     static final String UP_SYMBOL = "^";
     static final String STAYING_SYMBOL = "=";
@@ -29,10 +31,11 @@ public class ConsoleView implements View<ElevatorBuildingViewModel> {
     private String representString(ElevatorBuildingViewModel viewModel) {
         StringBuilder result = new StringBuilder();
 
+        Optional<Integer> goingToOptional = viewModel.getElevator().getDestinationFloor();
         result.append("Going to:\t")
-                .append(viewModel.getElevator().getDestinationFloor())
+                .append(goingToOptional.isEmpty() ? "STAYING" : goingToOptional.get())
                 .append("\n");
-        for (int floorNumber = 1; floorNumber < viewModel.getBuilding().getFloorsNumber(); floorNumber++) {
+        for (int floorNumber = viewModel.getBuilding().getFloorsNumber(); floorNumber >= 1; floorNumber--) {
             result.append(representElevatorOnFloor(viewModel.getElevator(), floorNumber)).
                     append(representPeopleWaitingOnFloor(viewModel.getBuilding(), floorNumber));
         }
@@ -40,20 +43,26 @@ public class ConsoleView implements View<ElevatorBuildingViewModel> {
         return result.toString();
     }
     private String representElevatorOnFloor(Elevator elevator, int floorNumber) {
+        final String elevatorDirectionSymbol = elevator.getCurrentFloorNumber() == floorNumber ?
+                getElevatorDirectionSymbol(elevator) :
+                " ";
         return WALL_SYMBOL +
-                getElevatorDirectionSymbol(elevator) +
+                elevatorDirectionSymbol +
                 getElevatorInsideView(elevator, floorNumber) +
-                getElevatorDirectionSymbol(elevator) +
+                elevatorDirectionSymbol +
                 WALL_SYMBOL;
     }
     private String getElevatorInsideView(Elevator elevator, int floorNumber) {
+        final String BLANK = "  ";
         if (elevator.getCurrentFloorNumber() != floorNumber) {
-            return " ".repeat(elevator.MAX_CAPACITY);
+            return BLANK.repeat(elevator.MAX_CAPACITY);
         }
         StringBuilder result = new StringBuilder();
         elevator.getPeopleIn().stream().
                 map(identificable -> (Human)identificable).
-                forEach(human -> result.append(human.getDestinationFloor()));
+                forEach(human -> result.append(" ").append(human.getDestinationFloor()));
+        int freePlaceInElevator = elevator.MAX_CAPACITY - elevator.getCurrentCapacity();
+        result.append(BLANK.repeat(freePlaceInElevator));
         return result.toString();
     }
     private String getElevatorDirectionSymbol(Elevator elevator) {

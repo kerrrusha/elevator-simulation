@@ -37,6 +37,9 @@ public class Elevator {
             return Direction.UP;
         return Direction.DOWN;
     }
+    public int getCurrentCapacity() {
+        return peopleIn.size();
+    }
     public void add(Human human) {
         checkIfOverflow();
         peopleIn.checkIfPresent(human);

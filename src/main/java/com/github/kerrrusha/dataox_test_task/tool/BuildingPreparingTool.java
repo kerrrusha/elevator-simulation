@@ -20,7 +20,7 @@ public class BuildingPreparingTool {
         );
         Building building = new Building(floorsAmount);
 
-        for (int floorNumber = 1; floorNumber < floorsAmount; floorNumber++) {
+        for (int floorNumber = 1; floorNumber <= floorsAmount; floorNumber++) {
             building.add(getFloor(floorNumber, floorsAmount));
         }
 

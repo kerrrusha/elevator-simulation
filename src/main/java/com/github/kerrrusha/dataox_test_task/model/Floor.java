@@ -48,6 +48,10 @@ public class Floor extends Identifier {
     public int getFloorNumber() {
         return number;
     }
+    @Override
+    public int getId() {
+        return getFloorNumber();
+    }
 
     @Override
     public int hashCode() {
