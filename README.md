@@ -78,6 +78,66 @@ The project is divided into the corresponding packages:
       <li>
         <strong>Building</strong> - class-container that describes building with floors. Doesn't have to extend Identifier class because there is no need to create Building collections and maps 
       </li>
+        <li>
+        <p><strong>Direction</strong></p>
+      </li>
+        <li>
+        <p><strong>Elevator</strong></p>
+      </li>
+        <li>
+        <p><strong>Floor</strong></p>
+      </li>
+        <li>
+        <p><strong>Human</strong></p>
+      </li>
+        <li>
+        <p><strong>Identificable</strong></p>
+      </li>
+        <li>
+        <p><strong>Identifier</strong></p>
+      </li>
+        <li>
+        <p><strong>IdToObjectMap</strong></p>
+      </li>
+    </ol>
+  </li>
+    <li>
+    <p><strong>tool</strong></p>
+        <ol>
+            <li>
+        <p><strong>BuildingPreparable</strong></p>
+      </li>
+        <li>
+        <p><strong>BuildingPreparingParameterizedTool</strong></p>
+      </li>
+        <li>
+        <p><strong>BuildingPreparingRandomTool</strong></p>
+      </li>
+            <li>
+        <p><strong>RandomisingTool</strong></p>
+      </li>
+            <li>
+        <p><strong>ValidationTool</strong></p>
+      </li>
+    </ol>
+  </li>
+    <li>
+    <p><strong>view</strong></p>
+        <ol>
+            <li>
+        <p><strong>BuildingPreparable</strong></p>
+      </li>
+        <li>
+        <p><strong>BuildingPreparingParameterizedTool</strong></p>
+      </li>
+    </ol>
+  </li>
+    <li>
+    <p><strong>view_model</strong></p>
+        <ol>
+            <li>
+        <p><strong>ElevatorBuildingViewModel</strong></p>
+      </li>
     </ol>
   </li>
 </ol>
