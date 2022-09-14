@@ -1,11 +1,9 @@
 package com.github.kerrrusha.dataox_test_task.model;
 
-import com.github.kerrrusha.dataox_test_task.exception.IllegalFloorException;
-
 public class Human extends Identifier {
     private static int objectsCreated = 0;
 
-    private int destinationFloor;
+    private final int destinationFloor;
     public Human(int destinationFloor) {
         super(objectsCreated);
         this.destinationFloor = destinationFloor;
@@ -14,11 +12,6 @@ public class Human extends Identifier {
 
     public int getDestinationFloor() {
         return destinationFloor;
-    }
-    public void setDestinationFloor(int destinationFloor) {
-        if (destinationFloor < 0)
-            throw new IllegalFloorException();
-        this.destinationFloor = destinationFloor;
     }
 
     @Override

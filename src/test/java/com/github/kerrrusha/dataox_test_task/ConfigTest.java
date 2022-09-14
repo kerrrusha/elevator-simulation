@@ -9,18 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ConfigTest {
     @Test
-    public void defaultTest() {
-        final String ERROR_MESSAGE = "Incorrect default value.";
-        Config config = Config.getInstanceDefaultValues();
-
-        assertEquals(5, config.getBuildingFloorMin(), ERROR_MESSAGE);
-        assertEquals(20, config.getBuildingFloorMax(), ERROR_MESSAGE);
-        assertEquals(0, config.getPassengersPerFloorMin(), ERROR_MESSAGE);
-        assertEquals(10, config.getPassengersPerFloorMax(), ERROR_MESSAGE);
-        assertEquals(5, config.getElevatorCapacity(), ERROR_MESSAGE);
-    }
-
-    @Test
     public void jsonFileTest() {
         final String ERROR_MESSAGE = "Incorrect default value.";
         final String jsonPath = Objects.requireNonNull(getClass().

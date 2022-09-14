@@ -1,7 +1,9 @@
 package com.github.kerrrusha.dataox_test_task.model;
 
+import com.github.kerrrusha.dataox_test_task.exception.ElementNotFoundException;
 import com.github.kerrrusha.dataox_test_task.tool.ValidationTool;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,23 +20,47 @@ public class Floor extends Identifier {
         people = new IdToObjectMap();
         objectsCreated++;
     }
-    public Floor(int floorNumber, IdToObjectMap people) {
-        super(objectsCreated);
-        ValidationTool.checkFloorNumber(floorNumber);
-        this.number = floorNumber;
-        this.people = people;
-        objectsCreated++;
-    }
 
-    public int getPeopleCount() {
-        return people.size();
-    }
     public void add(Human humanToAdd) {
-        people.checkIfPresent(humanToAdd);
+        people.checkIfNotPresent(humanToAdd);
         people.add(humanToAdd);
     }
-    public boolean contains(Human human) {
-        return people.contains(human);
+    public List<Human> getPeopleGoingTheSameWay() {
+        long goingUp = getPeopleList().stream().filter(human ->
+                getHumanDirection(human).equals(Direction.UP)).count();
+        long goingDown = getPeopleList().stream().filter(human ->
+                getHumanDirection(human).equals(Direction.DOWN)).count();
+
+        Direction resultDirection = goingUp > goingDown ? Direction.UP : Direction.DOWN;
+        return getPeopleList().stream().filter(human ->
+                getHumanDirection(human).equals(resultDirection)).collect(Collectors.toList());
+    }
+    public Direction getHumanDirection(Human human) {
+        if (!people.contains(human)) {
+            throw new ElementNotFoundException();
+        }
+        if (human.getDestinationFloor() > getFloorNumber())
+            return Direction.UP;
+        if (human.getDestinationFloor() < getFloorNumber())
+            return Direction.DOWN;
+        return Direction.NONE;
+    }
+    public List<Human> getPeopleGoingInSuchWay(Direction direction) {
+        List<Human> result = new ArrayList<>();
+        for(Human human : getPeopleList()) {
+            if ( (direction.equals(Direction.UP) && human.getDestinationFloor() > getFloorNumber()) ||
+                    (direction.equals(Direction.DOWN) && human.getDestinationFloor() < getFloorNumber())) {
+                result.add(human);
+            }
+        }
+        return result;
+
+    }
+    public boolean isEmpty() {
+        return people.isEmpty();
+    }
+    public boolean notEmpty() {
+        return !people.isEmpty();
     }
     public void remove(Human humanToRemove) {
         people.checkIfPresent(humanToRemove);

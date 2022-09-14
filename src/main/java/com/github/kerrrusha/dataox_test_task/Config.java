@@ -17,12 +17,8 @@ public final class Config {
     private static final String KEY_PASSENGERS_PER_FLOOR_MAX = "PASSENGERS_PER_FLOOR_MAX";
     private static final String KEY_ELEVATOR_CAPACITY = "ELEVATOR_CAPACITY";
 
-    private Map<String, Integer> data;
+    private final Map<String, Integer> data;
 
-    private Config() {
-        data = new HashMap<>();
-        initialiseDefault();
-    }
     private Config(String jsonPath) {
         Optional<JSONObject> jsonOptional = readJsonObject(jsonPath);
         data = new HashMap<>();
@@ -44,12 +40,6 @@ public final class Config {
         data.put(KEY_ELEVATOR_CAPACITY, 5);
     }
 
-    public static Config getInstanceDefaultValues() {
-        if (instance == null) {
-            instance = new Config();
-        }
-        return instance;
-    }
     public static Config getInstance(String jsonPath) {
         if (instance == null) {
             instance = new Config(jsonPath);

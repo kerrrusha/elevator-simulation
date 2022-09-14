@@ -5,14 +5,16 @@ import com.github.kerrrusha.dataox_test_task.model.Building;
 import com.github.kerrrusha.dataox_test_task.model.Floor;
 import com.github.kerrrusha.dataox_test_task.model.Human;
 
-public class BuildingPreparingTool {
+public class BuildingPreparingRandomTool implements BuildingPreparable {
     Config config;
     RandomisingTool rand;
-    public BuildingPreparingTool(Config config) {
+
+    public BuildingPreparingRandomTool(Config config) {
         this.config = config;
         this.rand = new RandomisingTool();
     }
 
+    @Override
     public Building getBuilding() {
         int floorsAmount = rand.nextInt(
                 config.getBuildingFloorMin(),
