@@ -40,7 +40,7 @@ It is assumed that the config.json file is located in a relative path:
 
 ![](https://reedfree.sirv.com/dataox_test_task.png)
 
-###The project is divided into the corresponding packages:
+### The project is divided into the corresponding packages:
     
 <ol>
   <li>
