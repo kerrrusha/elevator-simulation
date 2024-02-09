@@ -1,9 +1,5 @@
 # Elevator working model
 
-## Overview
-The following repo contains source code for test task in the Dataox co.
-It's Java Console application, that involved MVC design model to process actions with model and showing the results to the user side.
-
 ## Guidelines
 Run of the application will simulate work of the Elevator and will print step-by-step results of his work after every action.
 
